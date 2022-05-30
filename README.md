@@ -9,7 +9,7 @@
 <ul>
 <li>You can create programming questions on the authoring screen of TAO items.</li>
 <li>You can create a programming question by adding an icon for creating a programming question and dragging and dropping the icon to the blank question creation page in Custom Interaction.</li>
-<li>短Automatic indentation is performed according to the program syntax for the program code fragments composed by arranging the books side by side.</li>
+<li>Automatic indentation is performed according to the program syntax for the program code fragments composed by arranging the books side by side.</li>
 <li>You can add and execute inputs to a program composed of strips side by side.</li>
 <li>You can enter any value, expression, conditional statement, etc. in the blanks in the strip.</li>
 <li>Any character string such as a pseudo language can be set for the display label of the strip, and one line or multiple lines of JavaScript code can be associated with each strip.</li>
