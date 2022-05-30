@@ -112,3 +112,4 @@ The National Center for University Entrance Examinations
 <hr>
 
 ## License
+MIT License
