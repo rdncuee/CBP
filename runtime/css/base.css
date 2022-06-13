@@ -1,0 +1,674 @@
+/*@import url("base.css");*/
+.CodeBlockProgrammingInteraction code {
+  padding: 0 10px!important;
+  margin: 0!important;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.color-gray {
+  color: gray;
+}
+
+.root {
+  display: flex;
+  height: 701px;
+}
+
+.root-left {
+  width: 40%;
+  border: 6px solid #f5f4f2;
+  overflow: auto;
+
+  /*height: 100%;*/
+}
+
+.root-right {
+  width: 60%;
+  border: 6px solid #f5f4f2;
+  border-left: none;
+  overflow: auto;
+
+}
+
+.root-answer, .root-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.root-right > * {
+  border-bottom: 6px solid #f5f4f2;
+}
+
+.root-right:last-child {
+  border-bottom: none;
+}
+
+.rectangleContainer {
+  flex-grow: 1;
+}
+
+.root-child-title {
+  text-align: left;
+  color: gray;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.root-answer {
+  height: 500px;
+  overflow: auto;
+}
+
+.root-exec {
+  overflow: auto;
+  height: 150px;
+}
+.exec-print{
+  padding-left: 3px;
+}
+.addRectangle {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/*
+ TAO上のデフォルトCSSに!importantが使用されているため、優先順位を上げるため
+*/
+.root > .root-left > div > .addRectangle, 
+.root > .root-right > .root-child-border > div > .color-blue,
+.root > .root-right > .root-child-border > .js-popup-change, 
+.widget-box > .widget-ok{
+  color: rgb(14, 93, 145) !important; 
+}
+.root-child-border > .exec-btn {
+  background: #3d9d3d !important;
+  color: white !important;
+  border: none !important;
+}
+
+.root-child-border > .reset-btn {
+  background: #bbbbbb !important;
+  color: white !important;
+  border: none !important;
+}
+
+.rectangle {
+  width: 232px;
+  border-radius: 5.5px;
+  border-width: 0.5px;
+  border-style: solid;
+  margin: 3px 10px!important;
+  text-align: left;
+  padding: 5px 24px 0 28px !important;
+  position: relative;
+  font: normal normal normal 10px/10px Hiragino Sans;
+  letter-spacing: 0.47px;
+  color: #FFFFFF;
+  opacity: 1;
+  min-height: 32px;
+  background-repeat: no-repeat;
+  background-position: 8px 10px;
+  box-sizing: content-box !important;
+  font-weight: 560;
+  font-size: 10px;
+}
+
+.rectangle:hover,.rectangle:active{
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.555);
+}
+
+.rectangle[data-rectangle-type=process] {
+  min-height: 20px;
+  padding: 2px 24px 0 28px !important;
+  background-color: #BF57E7;
+  border: 2px solid #AD2EE8;
+  margin-bottom: 3px !important;
+}
+
+.rectangle[data-rectangle-type=while], .rectangle[data-rectangle-type=for] {
+  /* background-color: #F29600; */
+  border: 2px solid #F29600;
+  background-color: #FBA543;
+  background-image: url("img/while.png");
+    background-size: 19px auto;
+    background-position: 5px 4px;
+    margin-bottom: 1.9px !important;
+    margin-bottom: 1.5px !important;
+    
+    
+}
+
+.rectangle[data-rectangle-type=if] {
+  background-image: url("img/if.png");
+    background-size: 19px auto;
+    background-position: 5px 4px;
+  margin-bottom: 3px !important;
+    
+}
+
+.rectangle[data-rectangle-type=ifElse] {
+  background-image: url("img/else.png");
+    background-size: 19px auto;
+    background-position: 5px 4px;
+  margin-bottom: 3px !important;
+    
+}
+
+.rectangle[data-rectangle-type=ifElse], .rectangle[data-rectangle-type=if] {
+  background-color: #18B57F;
+  border: 2px solid #00A25F;
+  /* background-color: #0DAC67; */
+  background-size: 19px auto;
+  background-position: 5px 4px;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.rectangle[data-rectangle-type=print] {
+  /* background-color: #3D85C6; */
+  min-height: 20px;
+  background-color: #5496CA;
+  border: 2px solid #257ABB;
+  background-image: url("img/print.png");
+    background-size: 19px auto;
+    background-position: 5px 4px;
+ margin-bottom: 1.9px !important;
+ margin-bottom: 1.5px !important;
+    
+}
+
+.rectangle[data-rectangle-type=while], .rectangle[data-rectangle-type=for], .rectangle[data-rectangle-type=ifElse], .rectangle[data-rectangle-type=if] {
+  /* min-height: 52px; */
+  min-height: 49px;
+}
+
+
+.CodeBlockProgrammingInteraction *[data-edit="question"] {
+  display: none;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.qti-item [class^="btn-"], .qti-item [class*=" btn-"], .qti-item .btn-default, .qti-item button, .qti-item input[type="submit"], .qti-item input[type="reset"] {
+  margin-left: 13px !important;
+  border-radius: 1.5px !important;
+  /* border: dotted 2px #A5B4CC !important; */
+  border: 1px #3e7da7 dashed !important;
+  /* background: #CFE1F5 !important; */
+  background-color: #e7eff4 !important;
+  /* color: #83A6CF !important; */
+  color: #0e5d91 !important;
+  text-shadow: none !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  letter-spacing: 0.5px !important;
+  min-height: 20px !important;
+}
+
+.pbtn-pi {
+  margin-left: 13px;
+  border-radius: 1.5px;
+  border: dotted 2px #A5B4CC;
+  background: #CFE1F5;
+  color: #83A6CF !important;
+  text-shadow: none;
+  font-size: 11px !important;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  height: 30px !important;
+}
+
+.pbtn-pi-tite {
+  height: 25px !important;
+  line-height: 21px !important;
+  margin: 7px !important;
+}
+
+.pbtn-pi-noborder {
+  border: none !important;
+}
+
+.pbtn-pi-wide {
+  width: 150px !important;
+}
+
+.pbtn-pi-gray {
+  background: #bbbbbb;
+  color: white !important;
+}
+
+.pbtn-pi-green {
+  background: #3d9d3d;
+  color: white !important;
+}
+
+.pi-input {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 10px !important;
+}
+
+.p-gray {
+  padding-top: 4px !important;
+  color: #adadad;
+}
+
+.filter:hover {
+  box-shadow: none;
+}
+
+.box-none > * {
+  margin: 0 !important;
+}
+
+.box-none {
+  position: relative;
+  border: none;
+  left: -15px;
+  width: 258px;
+  padding-top: 3.7px!important;
+  padding-left: 3px!important;
+  padding-bottom: 1.6px!important;
+  margin: 10px!important;
+  min-height: 10px;
+  background-color: #fFFFFF;
+  text-align: left;
+  font: normal normal normal 10px/10px Hiragino Sans;
+  letter-spacing: 0.47px;
+  color: #FFFFFF;
+  opacity: 1;
+  box-sizing: content-box !important;
+}
+
+.box-none
+.list > div {
+
+  /* text-align: center; */
+}
+
+.list > .test {
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #b0abab;
+
+  text-align: center;
+}
+
+
+.half {
+  display: inline-block;
+  width: 49%;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+
+input {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #cccccc;
+  border-radius: 2.5px;
+}
+
+.box-none > .box-if,
+.box-none > .box-ifElse,
+.box-none > .box-for,
+.box-none > .box-while,
+.box-none > .box-process,
+.box-none > .box-print {
+  margin: 0px;
+}
+
+input {
+  width: 60px;
+}
+
+.sortable-ghost {
+  opacity: 0.4;
+}
+
+
+.rmv {
+  background-image: url("img/close.png");
+
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -3px;
+  right: -8px;
+  background-color: gray;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+}
+
+.locked {
+  background: url("img/locked.png");
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -4px;
+  right: -8px;
+}
+
+.lock {
+  display: none;
+  background: url("img/icn-lock.png");
+  background-size: 30px 25px;
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  top: 0px;
+  right: -40px;
+}
+
+.listRight .lock {
+  display: block;
+}
+
+.locked_bg {
+  background-color: #b1b1b1;
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.popup.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background-color: #839cbf;
+  z-index: 2;
+  box-shadow: 0 0 7px #000;
+  /*taoのデフォルトCSSに勝つため下記の書き方になった*/
+  padding:10px;
+  padding-top:10px!important; ;
+  padding-bottom:10px!important; ;
+}
+.popup-inner .js-popup-change{
+  float: right;
+  margin-top: 10px;
+}
+
+.popup-inner .result-popup-close{
+  float: right;
+  margin-top: 10px;
+}
+.popup-inner img {
+  width: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  font-size: 12px;
+  width: 100px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.black-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.modal-header-box {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  background: #f2f6f7;
+}
+
+.print-box {
+  width: 100%;
+  height: 300px;
+  background: #f2f6f7;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.cloe-btn-ds {
+  color: #110f0f;
+  background-color: #ddd6d1;
+}
+
+.cloe-btn-ds:hover {
+  color: #6b6565;
+  background: #bca99d;
+}
+
+.btn--radius {
+  height: 30px;
+  border: 1px solid #757575;
+  border-radius: 8px;
+}
+.qti-item, .show-value{
+  font-family: 'Courier New', Courier, 'Yu Gothic', 'MS Gothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Osaka-Mono', monospace !important;
+  font-size:1.15em;
+  line-height: 1.2em;
+  white-space: pre !important;
+}
+input.form-rect{
+  padding: 2px;
+  height: 24px;
+  line-height: 24px;
+  margin: 0px 2px;
+  width: 74px;
+  min-width: 30px !important;
+  font-family: 'Courier New', Courier, 'Yu Gothic', 'MS Gothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Osaka-Mono', monospace !important;
+}
+.form-rect-select{
+  min-width: 135px !important;
+  width: 100px;
+  line-height: 25px;
+  height: 25px;
+  margin: 0px 2px;
+  padding: 0px 2px !important;
+  font-family: 'Courier New', Courier, 'Yu Gothic', 'MS Gothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Osaka-Mono', monospace !important;
+}
+.root-right .lock{
+  display: block;
+}
+
+.root-left .form-rect, .root-left .form-rect-select{
+  pointer-events: none;
+  background: #ccc !important;
+}
+.root-right .form-rect, .root-right .form-rect-select{
+  pointer-events: all;
+  background: #fff !important;
+}
+
+.spacerectangle{
+  border: 2px dotted #68C1E8;
+  background: #E0F7FE;
+  color: #006FB4;
+  font-size: 10px;
+  border-radius: 0px;
+  padding: 0px 6px !important;
+  line-height: 33px;
+  height: 15px;
+}
+.edit-correct .spacerectangle,
+.tao-preview-scope .spacerectangle,
+.runtime .spacerectangle
+{
+  border: none !important;
+  background: none !important;
+  color: rgba(255,255,255,0) !important;
+}
+.edit-correct .spacerectangle .rmv,
+.tao-preview-scope .spacerectangle .rmv,
+.runtime .spacerectangle .rmv{
+  display: none !important;
+}
+.edit-correct .left-container .rectangle .rmv,
+.tao-preview-scope .left-container .rectangle .rmv,
+.runtime .left-container .rectangle .rmv
+{
+  display: none !important;
+}
+.edit-correct .right-container .rectangle .lock,
+.tao-preview-scope .right-container .rectangle .lock,
+.runtime .right-container .rectangle .lock{
+  display: none !important;
+}
+
+.question-title{
+  padding:5px;
+}
+.question-title:empty::before {
+  content: "問題文フィールド";
+  color: rgb(165, 165, 165);
+}
+.root-alert{
+  height: 80px;
+}
+.runtime .root-alert {
+  height: 90px !important;
+}
+.block-alert{
+  position: absolute;
+  left: -11px;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background: #CC0000;
+  line-height: 20px;
+  padding: 10px 5px;
+  text-align: left;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 10px;
+  border-radius: 50%;
+}
+/*
+.block-alert:after{
+  border: solid transparent;
+  content:'';
+  height:0;
+  width:0;
+  pointer-events:none;
+  position:absolute;
+  border-color: rgba(204, 0, 0, 0);
+  border-top-width:5px;
+  border-bottom-width:5px;
+  border-left-width:5px;
+  border-right-width:5px;
+  margin-top: -5px;
+  border-right-color:#CC0000;
+  right:100%;
+  top:50%;
+}
+*/
+.d-none{
+  display: none !important;
+}
+.block-alert-border{
+  border: 3px solid #CC0000 !important;
+}
+
+.current{
+  box-shadow: 0 0 10px rgb(0 0 255 / 56%);
+}
+.alert-print p{    
+  font-size: 0.8em !important;
+  margin-bottom: 0px !important;
+  padding-left: 3px;
+  padding-top: 2px !important;
+  color: #adadad;
+}
+.alertsection{
+  padding: 0px 5px;
+  margin: 3px 0px 10px 0px;
+  background: #ffc5c5;
+  color: red;
+  font-size: 0.9em;
+  border: 2px solid red;
+}
+.alertsection p{
+  color: red;
+  font-size: 0.9em;
+  margin-bottom:0px;
+}
+.root > .root-left > .btns > .addRectangle{
+  padding: 2px 8px;
+  font-size: 0.9em !important;
+  color: rgb(14, 93, 145) !important;
+  line-height: 11px !important;
+  display: inline-block;
+  margin-left: 8px !important;
+}
+.btns{
+  display: flex !important;
+  width: 90% !important;
+  justify-content: space-between !important;
+  margin-bottom: 10px !important;
+}
+.tao-preview-scope .btns,
+.runtime .btns{
+  display: none !important;
+}
+
+.runtime .root-exec {
+  overflow: auto;
+  height: 150px !important;
+}
+
+.spacerectangle:hover{
+  box-shadow: none !important;
+}
+.attention_span{
+  color: #ee8484;
+  font-size: 0.8em !important;
+  display: none;
+  margin-left: 10px;
+}
+
+.item-editor-item p, .item-editor-item span, .item-editor-item ol, .item-editor-item ul {
+  line-height: 0.6 !important;
+  font-size: 1.4rem;
+}
+.edit-question .qti-interaction [data-html-editable],
+.edit-sleep .qti-interaction [data-html-editable], 
+.edit-answer .qti-interaction [data-html-editable], 
+.qti-modalFeedback.edit-active [data-html-editable] {
+  margin-right: 0px;
+  margin-top: 10px !important;
+}
+
+.modal-header-box p{
+  line-height: 1.5 !important;
+}

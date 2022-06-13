@@ -1,0 +1,60 @@
+{
+  "typeIdentifier": "CodeBlockProgrammingInteraction",
+  "label": "CodeBlockProgramming",
+  "short": "CBP",
+  "description": "An environment of Code Block Programming",
+  "version": "1.0.2",
+  "author": "The National Center for University Entrance Examinations",
+  "email": "secretary@rd.dnc.ac.jp",
+  "tags": [
+  ],
+  "response": {
+    "baseType": "string",
+    "cardinality": "single"
+  },
+  "runtime": {
+    "hook": "./runtime/CodeBlockProgrammingInteraction.js",
+    "src": [
+      "./runtime/CodeBlockProgrammingInteraction.js"
+    ],
+    "stylesheets": [
+      "./runtime/css/base.css"
+    ],
+    "mediaFiles": [
+      "./runtime/css/img/icn-lock.png",
+      "./runtime/css/img/close.png",
+      "./runtime/css/img/locked.png",
+      "./runtime/css/img/if.png",
+      "./runtime/css/img/else.png",
+      "./runtime/css/img/print.png",
+      "./runtime/css/img/while.png"
+    ]
+  },
+  "creator": {
+    "icon": "./creator/img/icon_pro.svg",
+    "hook": "./pciCreator.js",
+    "src": [
+      "./lib/Sortable.js",
+      "./lib/beautify.js",
+      "./lib/timeworker.js",
+      "./runtime/CodeBlockProgrammingInteraction.js",
+      "./pciCreator.js",
+      "./creator/tpl/markup.tpl",
+      "./creator/tpl/propertiesForm.tpl",
+      "./creator/tpl/interaction.tpl",
+      "./creator/tpl/choicePanel.tpl",
+      "./creator/tpl/rectangle.tpl",
+      "./creator/widget/Widget.js",
+      "./creator/widget/config.js",
+      "./creator/widget/utils.js",
+      "./creator/widget/states/Question.js",
+      "./creator/widget/states/Answer.js",
+      "./creator/widget/states/Correct.js",
+      "./creator/widget/states/states.js",
+      "./creator/widget/states/Choice.js",
+      "./creator/Rectangle.js",
+      "./creator/Panel.js",
+      "./creator/ToCode.js"
+    ]
+  }
+}
