@@ -1,4 +1,4 @@
-<h1><strong>Code Block Programming Interaction(Coming soon)</strong></h1>
+<h1><strong>Code Block Programming Interaction</strong></h1>
 
 <h2>Overview</h2>
 <p>PCI is the interaction (component for authoring a problem item) required to create a unique form of problem. On TAO, you can create a typical problem item by using QTI (general interaction prepared as standard), but it seems to be a requirement in this case programming problem. Since the interaction for creating problem items is not provided as standard, it is necessary to develop PCI to enable the creation of problem items for programming problems. (tentative)</p>
